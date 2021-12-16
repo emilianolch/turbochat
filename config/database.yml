@@ -21,7 +21,7 @@ test:
   database: db/test.sqlite3
 
 production:
-  adapter: postresql
+  adapter: postgresql
   encoding: unicode
   database: turbochat_production
   username: turbochat
