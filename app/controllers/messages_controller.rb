@@ -6,9 +6,10 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @nessage = @room.messages.create(message_params)
+    @message = @room.messages.create(message_params)
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to @room }
     end
   end
