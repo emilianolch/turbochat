@@ -8,6 +8,7 @@
   </div>
 
   <div class="actions mb-3">
-    <%= form.submit class: 'btn btn-primary' %>
+    <%= form.submit class: 'btn btn-sm btn-primary' %>
+    <%= link_to 'Cancel', room.new_record? ? rooms_path : room, class: 'btn btn-sm btn-secondary' %>
   </div>
 <% end %>

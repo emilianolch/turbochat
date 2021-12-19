@@ -3,11 +3,10 @@
 <%= turbo_frame_tag 'room' do %>
   <%= render @room %>
 
-  <div>
-    <%= link_to "Edit this room", edit_room_path(@room) %> |
-    <%= link_to "Back to rooms", rooms_path, 'data-turbo-frame': '_top' %>
-
-    <%= button_to "Destroy this room", @room, method: :delete, 'data-turbo-frame': '_top' %>
+  <div class="mb-3">
+    <%= link_to "Edit this room", edit_room_path(@room), class: 'btn btn-sm btn-secondary mb-1' %>
+    <%= link_to "Delete this room", @room, method: :delete, 'data-turbo-frame': '_top', class: 'btn btn-sm btn-danger mb-1' %>
+    <%= link_to "Back to rooms", rooms_path, 'data-turbo-frame': '_top', class: 'btn btn-sm btn-secondary mb-1' %>
   </div>
 <% end %>
 
