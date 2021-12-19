@@ -1,14 +1,6 @@
 <%= form_with(model: room) do |form| %>
-  <% if room.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
-
-      <ul>
-        <% room.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <% room.errors.each do |error| %>
+    <p class="text-danger"><strong><%= error.full_message %></strong></p>
   <% end %>
 
   <div class="form-group mb-3">
