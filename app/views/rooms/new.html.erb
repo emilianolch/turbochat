@@ -1,9 +1,8 @@
-<h1>New room</h1>
+<div class="card">
+  <h5 class="card-header">New room</h5>
+  <div class="card-body mb-3">
+    <%= render "form", room: @room %>
 
-<%= render "form", room: @room %>
-
-<br>
-
-<div>
-  <%= link_to "Back to rooms", rooms_path %>
+    <%= link_to "Back to rooms", rooms_path %>
+  <div>
 </div>
