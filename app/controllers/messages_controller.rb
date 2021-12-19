@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @room.messages.create(message_params)
+    @message = @room.messages.create(message_params.merge({ user: current_user }))
 
     respond_to do |format|
       format.turbo_stream
