@@ -4,7 +4,9 @@
   <%= form_with model: [@message.room, @message], data: {controller: 'form', action: 'turbo:submit-end->form#reset'} do |form| %>
     <div class="field input-group">
       <%= form.text_field :content, autocomplete: 'off', class: 'form-control', placeholder: 'Message' %>
-      <%= form.submit 'Send', class: 'btn btn-primary' %>
+      <%= form.button type: 'submit', class: 'btn btn-primary' do %>
+        <i class="bi bi-send-fill"></i>
+      <% end %>
     </div>
   <% end %>
 <% end %>
