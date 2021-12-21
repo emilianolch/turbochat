@@ -1,3 +1,6 @@
-<p id="<%= dom_id message %>">
-  <%= message.created_at.to_formatted_s(:short) %>: <%= message.content %>
-</p>
+<div id="<%= dom_id message %>" class="mb-2">
+  <div style="display: inline-block; background-color: lightblue; border-radius: 10px; padding: 6px 15px;">
+    <strong><%= message.user %></strong><br/> 
+    <%= message.content %>
+  </div>
+</div>
