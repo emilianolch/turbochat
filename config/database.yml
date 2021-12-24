@@ -23,10 +23,10 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  host: database-1.c569t9e2arla.us-east-2.rds.amazonaws.com
-  database: turbochat_production
-  username: turbochat
-  password: <%= ENV["MYAPP_DATABASE_PASSWORD"]
+  host: <%= ENV["DB_HOST"] %>
+  database: <%= ENV["DB_NAME"] %>
+  username: <%= ENV["DB_USER"] $>
+  password: <%= ENV["DB_PASSWORD"] %>
   reconnect: false
   pool: 5
 
