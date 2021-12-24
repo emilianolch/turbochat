@@ -8,11 +8,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
 
   def profile_picture
-    if avatar.attached?
-      avatar.variant(resize_to_fit: [nil, 100])
-    else
-      "/assets/default_profile.jpg"
-    end
+    avatar.variant(resize_to_fit: [nil, 100]) if avatar.attached?
   end
 
   def to_s

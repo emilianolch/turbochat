@@ -26,7 +26,7 @@
 
       <div class="field form-group mb-3">
         <h5>Profile picture</h5>
-        <%= image_tag resource.profile_picture, class: "profile-picture" %>
+        <%= image_tag resource.profile_picture || asset_path('default_profile.jpg'), class: "profile-picture" %>
         <%= f.file_field :avatar, class: 'form-control' %>
       </div>
 
