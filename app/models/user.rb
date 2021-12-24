@@ -4,11 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  has_one_attached :avatar 
+  has_one_attached :avatar, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   def profile_picture
     if avatar.attached?
-      avatar.variant(resize_to_fit: [100, nil])
+      avatar.variant(resize_to_fit: [nil, 100])
     else
       "/assets/default_profile.jpg"
     end

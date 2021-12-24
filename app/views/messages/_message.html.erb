@@ -1,4 +1,5 @@
 <div id="<%= dom_id message %>" class="mb-2">
+  <%= image_tag message.user.profile_picture, class: 'float-start' %>
   <div class="message">
     <strong><%= message.user %></strong><br/> 
     <%= message.content %>
