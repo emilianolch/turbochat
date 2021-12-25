@@ -3,7 +3,7 @@
   <h5 class="card-header">Log in</h5>
 
   <div class="card-body">
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field from-group mb-3">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
       </div>
