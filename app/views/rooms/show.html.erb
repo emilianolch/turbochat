@@ -4,9 +4,9 @@
   <%= render @room %>
 
   <div class="mb-3">
-    <%= link_to "Edit this room", edit_room_path(@room), class: 'btn btn-sm btn-secondary mb-1' %>
+    <%= link_to "Edit this room", edit_room_path(@room), class: 'btn btn-sm btn-secondary mb-1' if current_user == @room.user %>
     <%= link_to "Back to rooms", rooms_path, 'data-turbo-frame': '_top', class: 'btn btn-sm btn-secondary mb-1' %>
-    <%= button_to "Delete this room", @room, method: :delete, 'data-turbo-frame': '_top', class: 'btn btn-sm btn-danger mb-1' %>
+    <%= button_to "Delete this room", @room, method: :delete, 'data-turbo-frame': '_top', class: 'btn btn-sm btn-danger mb-1' if current_user == @room.user %>
   </div>
 <% end %>
 

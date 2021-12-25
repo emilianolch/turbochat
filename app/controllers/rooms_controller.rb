@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_room, only: %i[ show edit update destroy ]
+  before_action :require_owner, only: %i[ update destroy ]
 
   # GET /rooms or /rooms.json
   def index
@@ -70,5 +71,14 @@ class RoomsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def room_params
       params.require(:room).permit(:name)
+    end
+
+    # Only owner can update or delete the room.created_at
+    def require_owner
+      unless current_user == @room.user
+        respond_to do |format|
+          format.html { redirect_to @room, notice: "You're not the owner of this room, so you can't modify or delete it."}
+        end
+      end
     end
 end
