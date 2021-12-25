@@ -11,6 +11,10 @@ class User < ApplicationRecord
     avatar.variant(resize_to_fit: [nil, 100]) if avatar.attached?
   end
 
+  def profile_picture_xs
+    avatar.variant(resize_to_fit: [nil, 40]) if avatar.attached?
+  end
+
   def to_s
     email.match(/(.+)@/)[1]
   end
