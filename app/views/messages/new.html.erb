@@ -1,14 +1,16 @@
 <h1>New Message</h1>
 
 <%= turbo_frame_tag 'new_message', target: '_top' do %>
-  <%= form_with model: [@message.room, @message], data: {controller: 'form', action: 'turbo:submit-end->form#reset'} do |form| %>
-    <div class="field input-group mb-3">
-      <%= form.text_field :content, autocomplete: 'off', class: 'form-control', placeholder: 'Message' %>
-      <%= form.button type: 'submit', class: 'btn btn-primary' do %>
-        <i class="bi bi-send-fill"></i>
-      <% end %>
-    </div>
-  <% end %>
+  <nav class="navbar fixed-bottom navbar-light bg-light">
+    <%= form_with model: [@message.room, @message], data: {controller: 'form', action: 'turbo:submit-end->form#reset'}, class: 'form-inline w-100 m-3' do |form| %>
+      <div class="field input-group">
+        <%= form.text_field :content, autocomplete: 'off', class: 'form-control', placeholder: 'Message' %>
+        <%= form.button type: 'submit', class: 'btn btn-primary' do %>
+          <i class="bi bi-send-fill"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </nav>
 <% end %>
 
 <%= link_to 'Back', @message.room %>
