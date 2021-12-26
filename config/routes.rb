@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/about'
   devise_for :users
   get 'messages/new'
   get 'messages/create'
