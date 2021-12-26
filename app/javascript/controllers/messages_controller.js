@@ -10,5 +10,6 @@ export default class extends Controller {
 
   reset() {
     this.element.reset()
+    //this.element.querySelector('#message_content').focus()
   }
 }
