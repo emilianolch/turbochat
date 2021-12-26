@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'home/about'
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'registrations' }
   get 'messages/new'
   get 'messages/create'
   resources :rooms do
