@@ -7,17 +7,8 @@ export default class extends Controller {
       behavior: 'instant'
     })
   }
+
   reset() {
     this.element.reset()
-    // Scroll page to bottom
-    const yPosition = document.body.offsetHeight + 1000
-    window.scroll({
-      top: yPosition,
-      behavior: 'smooth'
-    })
-  }
-
-  scrollDown() {
-    console.log('scrollDown()')
   }
 }
