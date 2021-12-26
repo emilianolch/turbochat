@@ -1,7 +1,9 @@
-<div id="<%= dom_id message %>" class="mb-2">
-  <%= image_tag message.user.profile_picture_xs || image_path('default_profile.jpg'), class: 'float-start' %>
-  <div class="message">
-    <strong><%= message.user %></strong><br/> 
-    <%= message.content %>
+<%= turbo_frame_tag dom_id(message), data: { controller: 'messages' } do %>
+  <div class="mb-2">
+    <%= image_tag message.user.profile_picture_xs || image_path('default_profile.jpg'), class: 'float-start' %>
+    <div class="message">
+      <strong><%= message.user %></strong><br/> 
+      <%= message.content %>
+    </div>
   </div>
-</div>
+<% end %>

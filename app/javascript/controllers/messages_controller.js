@@ -9,13 +9,15 @@ export default class extends Controller {
   }
   reset() {
     this.element.reset()
-
     // Scroll page to bottom
     const yPosition = document.body.offsetHeight + 1000
     window.scroll({
       top: yPosition,
       behavior: 'smooth'
     })
-    console.log('scroll1000')
+  }
+
+  scrollDown() {
+    console.log('scrollDown()')
   }
 }
