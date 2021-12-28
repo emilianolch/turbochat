@@ -20,12 +20,7 @@
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Password confirmation' %>
       </div>
       
-      <div class="field form-group mb-3">
-        <h5>Profile picture</h5>
-        <%= f.file_field :avatar, class: 'form-control' %>
-      </div>
-
-      <div class="actions">
+      <div class="actions mb-3">
         <%= f.submit "Sign up", class: 'btn btn-primary' %>
       </div>
     <% end %>
