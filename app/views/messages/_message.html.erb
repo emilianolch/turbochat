@@ -1,5 +1,5 @@
 <!-- Calls messages#connect after rendering, so the page is scrolled down -->
-<div id="<%= dom_id message %>" data-controller="messages" class="mb-2">
+<div id="<%= dom_id message %>" data-room-target="message" class="mb-2">
   <%= image_tag message.user.profile_picture_xs || image_path('default_profile.jpg'), class: 'avatar float-start' %>
   <div class="message">
     <strong><%= message.user %></strong><br/> 
